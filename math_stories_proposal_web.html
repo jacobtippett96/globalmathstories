@@ -1,0 +1,816 @@
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Platform Features</h2>
+            <p class="section-subtitle">Comprehensive MVP functionality for educational excellence</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Lesson Library System</h3>
+                    <ul>
+                        <li>Comprehensive repository of mathematical stories</li>
+                        <li>Search and filtering capabilities</li>
+                        <li>Content categorization and tagging</li>
+                        <li>User-friendly content discovery</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Subscription Management</h3>
+                    <ul>
+                        <li>Tiered subscription models</li>
+                        <li>User authentication and access control</li>
+                        <li>Account management functionality</li>
+                        <li>Automated billing with Stripe</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Interactive Presentation</h3>
+                    <ul>
+                        <li>In-app lesson presentation mode</li>
+                        <li>Optimized viewing experience</li>
+                        <li>Interactive engagement elements</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Personal Dashboard</h3>
+                    <ul>
+                        <li>"My Lessons" tracking feature</li>
+                        <li>Progress monitoring and analytics</li>
+                        <li>Bookmarking and favorites</li>
+                        <li>Learning history overview</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Admin Tools</h3>
+                    <ul>
+                        <li>Content upload and management</li>
+                        <li>User management and analytics</li>
+                        <li>Subscription oversight</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Marketing Website</h3>
+                    <ul>
+                        <li>8-10 professional pages</li>
+                        <li>Card-based lesson display</li>
+                        <li>WordPress + Elementor build</li>
+                        <li>SEO and conversion optimized</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Math Stories - Project Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            color: #191414;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(25, 20, 20, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2fac4a;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #191414;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(47, 172, 74, 0.1);
+            color: #2fac4a;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(47, 172, 74, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(47, 172, 74, 0.08) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #191414, #2fac4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.7;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #2fac4a, #1db954);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(47, 172, 74, 0.4);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2fac4a;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 0.6;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(25, 20, 20, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(47, 172, 74, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(47, 172, 74, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2fac4a;
+        }
+
+        .card p {
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2fac4a;
+            font-weight: bold;
+        }
+
+        /* Pricing Card */
+        .pricing-card {
+            background: linear-gradient(135deg, rgba(47, 172, 74, 0.08), rgba(47, 172, 74, 0.04));
+            border: 2px solid rgba(47, 172, 74, 0.3);
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #2fac4a;
+            margin: 20px 0;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #2fac4a, rgba(47, 172, 74, 0.3));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            width: 45%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(25, 20, 20, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #2fac4a;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(47, 172, 74, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Content styling */
+        .content-section {
+            background: rgba(255, 255, 255, 0.6);
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid #2fac4a;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background: rgba(47, 172, 74, 0.15);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #2fac4a;
+            font-weight: 600;
+        }
+
+        .metric {
+            display: inline-block;
+            background: rgba(47, 172, 74, 0.08);
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 5px;
+            border: 1px solid rgba(47, 172, 74, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(25, 20, 20, 0.1);
+        }
+
+        .footer-content {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Global Math Stories</a>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#investment">Investment</a></li>
+                <li><a href="#expansion">Expansion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Global Math Stories</h1>
+                <p>Revolutionizing mathematics education through narrative-driven learning experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <p class="section-subtitle">A comprehensive subscription platform for mathematics storytelling</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Project Investment</h3>
+                    <div class="price">$39,500</div>
+                    <p>Complete platform development including custom CMS, payment integration, and marketing website</p>
+                </div>
+                <div class="card">
+                    <h3>Timeline</h3>
+                    <div class="price">8-10 <span>weeks</span></div>
+                    <p>MVP development targeting Chad's upcoming conference launch</p>
+                </div>
+                <div class="card">
+                    <h3>Platform Type</h3>
+                    <div class="price">Custom <span>CMS + WordPress</span></div>
+                    <p>Scalable architecture with WordPress marketing site and Stripe integration</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>About This Platform</h3>
+                <p>The Global Math Stories platform represents an innovative approach to mathematics education, combining storytelling techniques with mathematical concepts to create engaging learning experiences. The platform will provide educators with a curated library of mathematical stories while offering students an interactive learning environment that makes complex mathematical concepts accessible and enjoyable.</p>
+                
+                <p>This proposal outlines the development of a subscription-based educational platform focused on mathematics storytelling. The platform will serve as a comprehensive solution for educators and students seeking engaging, narrative-driven mathematical content. The project includes both a custom-built learning management system and a professional marketing website to support user acquisition and retention.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="branding" class="section">
+        <div class="container">
+            <h2>Branding & Visual Identity</h2>
+            <p class="section-subtitle">Creating a cohesive brand experience for educational excellence</p>
+            
+            <div class="content-section">
+                <h3>Brand Development Strategy</h3>
+                <p>The Global Math Stories brand will be strategically designed as a foundation for comprehensive educational expansion across multiple learning subjects. The architecture, branding, and user experience are being built with scalability in mind to support a full spectrum of educational content while maintaining the core storytelling approach that makes learning engaging and effective.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Brand Foundation (Weeks 1-2)</h3>
+                    <ul>
+                        <li>Final platform name selection and validation</li>
+                        <li>Brand positioning and messaging strategy</li>
+                        <li>Competitive analysis and market positioning</li>
+                        <li>Target audience definition and personas</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Visual Identity (Weeks 3-4)</h3>
+                    <ul>
+                        <li>Logo design and brand mark development</li>
+                        <li>Color palette and typography selection</li>
+                        <li>Brand guidelines and style documentation</li>
+                        <li>Marketing collateral templates</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Brand Implementation (Weeks 5-8)</h3>
+                    <ul>
+                        <li>Website design integration</li>
+                        <li>Platform UI/UX design consistency</li>
+                        <li>Marketing material development</li>
+                        <li>Brand launch preparation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Brand Evolution for Multi-Subject Scaling</h3>
+                <p><strong>Current Focus:</strong> "Global Math Stories" - Mathematics-focused storytelling platform</p>
+                <p><strong>Future Vision:</strong> "Global Learning Stories" or "StoryLearn Global" - Comprehensive educational storytelling ecosystem</p>
+                <p><strong>Long-term Goal:</strong> Leading narrative-based learning platform across all educational subjects</p>
+                
+                <p>The visual identity will include a color-coded subject identification system, consistent design language across all subject areas, flexible iconography supporting diverse educational content, and a unified user experience regardless of subject matter. This approach ensures the brand can grow seamlessly from mathematics into science, language arts, and beyond.</p>
+            </div>
+        </div>
+    </section>
+        <div class="container">
+            <h2>Platform Features</h2>
+            <p class="section-subtitle">Comprehensive MVP functionality for educational excellence</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Lesson Library System</h3>
+                    <ul>
+                        <li>Comprehensive repository of mathematical stories</li>
+                        <li>Search and filtering capabilities</li>
+                        <li>Content categorization and tagging</li>
+                        <li>User-friendly content discovery</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Subscription Management</h3>
+                    <ul>
+                        <li>Tiered subscription models</li>
+                        <li>User authentication and access control</li>
+                        <li>Account management functionality</li>
+                        <li>Automated billing with Stripe</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Interactive Presentation</h3>
+                    <ul>
+                        <li>In-app lesson presentation mode</li>
+                        <li>Optimized viewing experience</li>
+                        <li>Interactive engagement elements</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Personal Dashboard</h3>
+                    <ul>
+                        <li>"My Lessons" tracking feature</li>
+                        <li>Progress monitoring and analytics</li>
+                        <li>Bookmarking and favorites</li>
+                        <li>Learning history overview</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Admin Tools</h3>
+                    <ul>
+                        <li>Content upload and management</li>
+                        <li>User management and analytics</li>
+                        <li>Subscription oversight</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Marketing Website</h3>
+                    <ul>
+                        <li>8-10 professional pages</li>
+                        <li>Card-based lesson display</li>
+                        <li>WordPress + Elementor build</li>
+                        <li>SEO and conversion optimized</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section">
+        <div class="container">
+            <h2>Project Timeline</h2>
+            <p class="section-subtitle">Structured development phases for timely delivery</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 1: Foundation (Weeks 1-3)</h3>
+                        <p>Project kickoff, requirements finalization, technical architecture planning, brand name and messaging</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 2: Development Sprint (Weeks 3-5)</h3>
+                        <p>Core platform development, CMS implementation, payment system integration, and initial testing</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 3: Content & Design (Weeks 4-7)</h3>
+                        <p>Visual branding completion, marketing website development, content migration, and UI refinement</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 4: Testing & Launch (Weeks 8-10)</h3>
+                        <p>Comprehensive testing, user acceptance testing, conference preparation, and platform launch</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="investment" class="section">
+        <div class="container">
+            <h2>Project Investment</h2>
+            <p class="section-subtitle">Investment breakdown for comprehensive platform development</p>
+            
+            <div class="content-section">
+                <h3>Total Investment: $39,500</h3>
+                <p>This investment represents the complete development cost for creating a professional, scalable educational platform that can serve as the foundation for Global Math Stories and future subject expansions. The investment covers all aspects of development, from initial concept through launch preparation.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Platform Development</h3>
+                    <ul>
+                        <li>Custom-built CMS development</li>
+                        <li>User authentication and subscription system</li>
+                        <li>Interactive lesson presentation features</li>
+                        <li>Administrative dashboard and tools</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Integration & Testing</h3>
+                    <ul>
+                        <li>Stripe payment system integration</li>
+                        <li>Comprehensive testing and quality assurance</li>
+                        <li>Performance optimization</li>
+                        <li>Security implementation and validation</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Design & Marketing</h3>
+                    <ul>
+                        <li>Complete brand identity development</li>
+                        <li>WordPress marketing website creation</li>
+                        <li>UI/UX design and implementation</li>
+                        <li>Content setup and migration support</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Launch Support</h3>
+                    <ul>
+                        <li>Conference presentation preparation</li>
+                        <li>Platform documentation and training</li>
+                        <li>Go-live support and monitoring</li>
+                        <li>Initial user onboarding setup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <p><span class="highlight">Important Note:</span> This investment covers the complete technical development and launch preparation. Equity discussions and long-term partnership arrangements will be handled separately, allowing for clear project scope definition and future flexibility as the platform grows.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="expansion" class="section">
+        <div class="container">
+            <h2>Multi-Subject Expansion Strategy</h2>
+            <p class="section-subtitle">Scalable architecture for comprehensive educational growth</p>
+            
+            <div class="content-section">
+                <h3>Strategic Foundation</h3>
+                <p>The Global Math Stories platform is strategically designed as a foundation for comprehensive educational expansion across multiple learning subjects. The architecture, branding, and user experience are being built with scalability in mind to support a full spectrum of educational content while maintaining the core storytelling approach that makes learning engaging and effective across all educational disciplines.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Mathematics Foundation</h3>
+                    <p>Establish core platform functionality, validate storytelling approach in mathematics, build user base and gather educational insights, refine content delivery and engagement models</p>
+                </div>
+                <div class="card">
+                    <h3>Science Integration</h3>
+                    <p>Physical Sciences through narrative exploration, Life Sciences with biology and chemistry stories, Earth Sciences with environmental and geological storytelling, Space Sciences covering astronomy and space exploration narratives</p>
+                </div>
+                <div class="card">
+                    <h3>Language Arts Expansion</h3>
+                    <p>Literature Studies with classic and contemporary literary analysis, Writing Development through creative and technical writing modules, Grammar and Composition with interactive language structure lessons, Reading Comprehension with structured skill development</p>
+                </div>
+                <div class="card">
+                    <h3>Comprehensive Subject Library</h3>
+                    <p>Social Studies with historical narratives and cultural exploration, Foreign Languages through immersive language learning stories, Arts Education for creative expression and artistic techniques, Technology/Computer Science with programming and digital literacy modules</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Technical Architecture for Multi-Subject Scaling</h3>
+                <p>The platform features a subject-agnostic core system with modular content management supporting diverse media types, flexible categorization adaptable to any subject area, universal user progress tracking across all subjects, and scalable subscription models supporting subject-specific or comprehensive access.</p>
+                
+                <p>Our content delivery framework includes standardized lesson structure adaptable to different learning objectives, an interactive element library supporting various educational approaches, assessment and evaluation tools customizable for each subject area, and cross-subject learning pathway recommendations.</p>
+            </div>
+
+            <div class="content-section">
+                <h3>Market Expansion Opportunities</h3>
+                <p>The platform targets multiple educational market segments including K-12 Schools with comprehensive curriculum support, Higher Education through specialized modules for college-level concepts, Adult Learning for professional development and continuing education, and Homeschooling with complete educational solutions for diverse learning needs.</p>
+                
+                <p>Revenue model expansion includes subject-specific subscriptions for targeted access, comprehensive educational packages for institutions, premium content tiers with advanced lessons and specialized resources, and corporate training for professional development in technical and soft skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Bill Cummings and Jacob Tippett. Revolutionizing education through narrative learning.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling and interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (nav) {
+                    if (window.scrollY > 50) {
+                        nav.style.background = 'rgba(248, 249, 250, 0.98)';
+                    } else {
+                        nav.style.background = 'rgba(248, 249, 250, 0.95)';
+                    }
+                }
+            });
+
+            // Card hover effects
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Button pulse effect (if button exists)
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                
+                ctaButton.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
